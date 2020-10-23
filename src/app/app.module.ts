@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
+//import { ListaComponent } from './+lista/lista/lista.component';
+//import { ItemComponent } from './+itemlista/item/item.component';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
   ],
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent//,
+    //ItemComponent
   ],
   bootstrap: [AppComponent]
 })

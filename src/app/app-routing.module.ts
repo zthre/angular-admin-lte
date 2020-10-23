@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import {ItemComponent} from './+itemlista/item/item.component';
 
 const routes: Routes = [
   {
@@ -106,7 +107,13 @@ const routes: Routes = [
         loadChildren: () => import('./+tabs/tabs.module').then(m => m.TabsModule),
         data: {
           title: 'Tabs',
-        }
+        },
+      },{
+        path: 'lista',
+        loadChildren: () => import('./+lista/lista/lista.module').then(m => m.ListaModule),
+        data: {
+          title: 'lista',
+        },
       }
     ]
   }, {
@@ -136,6 +143,7 @@ const routes: Routes = [
       customLayout: true
     }
   },
+  {path: 'itemlista/:id', component: ItemComponent}
 ];
 
 @NgModule({

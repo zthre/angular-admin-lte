@@ -1,0 +1,37 @@
+<mk-box header="Tabla lista" [isCollapsable]="true" [isRemovable]="false" contentClasses="table-responsive">
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <th>Alias</th>
+                <th>Owner</th>
+                <th>Fecha</th>
+                <th>Ver</th>
+                <th>Eliminar</th>
+            </tr>
+            <tr *ngFor="let item of lista; let i = index">
+                <td>{{item.id}}</td>
+                <td>{{item.alias}}</td>
+                <td>{{item.owner}}</td>
+                <td>{{item.fecha}}</td>
+                <td>
+                    <!--<button (click)="callpopup(i)" type="button" class="btn btn-success">Ver</button>-->
+                    <a [routerLink]="['/itemlista',i]" class="btn btn-primary ml-5">ir</a>
+                </td>
+                <td>
+                    <button (click)="eliminar(i)" type="button" class="btn btn-warning ml-5">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</mk-box>
+
+<div class="overlay" *ngIf="popup">
+    <div class="popup">
+        <h4>ID: {{lista[index].id}}</h4>
+        <h4>ALIAS: {{lista[index].alias}}</h4>
+        <h4>OWNER: {{lista[index].owner}}</h4>
+        <h4>FECHA: {{lista[index].fecha}}</h4>
+        <a class="close" (click)="popup = false">&times;</a>
+    </div>
+</div>
