@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { DetalleComponentModule } from './+layout/lista-component/detalle/detalle.module';
 
 const routes: Routes = [
   {
@@ -69,6 +70,13 @@ const routes: Routes = [
             title: 'Sidebar Right'
           }
         },
+        {
+          path: 'lista',
+          loadChildren: () => import('./+layout/lista-component/lista-component.module').then(m => m.ListaComponentModule),
+          data: {
+            title: 'Lista'
+          }
+        },
       ]
     }, {
       path: 'boxs',
@@ -106,6 +114,13 @@ const routes: Routes = [
         loadChildren: () => import('./+tabs/tabs.module').then(m => m.TabsModule),
         data: {
           title: 'Tabs',
+        }
+      }
+      , {
+        path: 'layout/lista/detalle/:id',
+        loadChildren: () => import('./+layout/lista-component/detalle/detalle.module').then(m => m.DetalleComponentModule),
+        data: {
+          title: 'Detalle',
         }
       }
     ]

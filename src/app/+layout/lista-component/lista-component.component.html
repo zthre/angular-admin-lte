@@ -1,0 +1,33 @@
+<mk-box header="Lista ASW" [isCollapsable]="true" [isRemovable]="false" contentClasses="table-responsive">
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <th>ALIAS</th>
+                <th>OWNER</th>
+                <th>FECHA</th>
+                <th>ACCION</th>
+            </tr>
+            <tr *ngFor="let listaItem of lista; let i = index;" class="p">
+                <td>{{ listaItem.id }}</td>
+                <td>{{ listaItem.alias }}</td>
+                <td>{{ listaItem.owner }}</td>
+                <td>{{ listaItem.fecha }}</td>
+                <td>
+                    <div>
+                        <div>
+                            <button type="button" class="btn btn-info btn-block" [routerLink]="['detalle', listaItem.id]">
+                                Ver <span class="fa fa-info-circle"></span>
+                            </button>
+                        </div>
+                        <div>
+                            <button (click)="borrarItem( listaItem.id )" type="button" class="btn btn-danger btn-block">
+                                Eliminar
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</mk-box>

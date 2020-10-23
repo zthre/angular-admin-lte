@@ -17,7 +17,8 @@ export const adminLteConf = {
         {label: 'Header', route: 'layout/header'},
         {label: 'Sidebar Left', route: 'layout/sidebar-left'},
         {label: 'Sidebar Right', route: 'layout/sidebar-right'},
-        {label: 'Content', route: 'layout/content'}
+        {label: 'Content', route: 'layout/content'},
+        {label: 'Lista', route: 'layout/lista'}
       ]},
     {label: 'COMPONENTS', separator: true},
     {label: 'Accordion', route: 'accordion', iconClasses: 'fa fa-tasks'},

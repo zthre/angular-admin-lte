@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 
 import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
 
+import { ListaService } from './services/lista.service';
+
 
 @NgModule({
   imports: [
@@ -25,6 +27,9 @@ import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
   declarations: [
     AppComponent,
     HomeComponent
+  ],
+  providers:[
+    ListaService
   ],
   bootstrap: [AppComponent]
 })
