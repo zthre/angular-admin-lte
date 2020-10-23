@@ -1,0 +1,28 @@
+<mk-box header="{{ detalle.owner }}" [isCollapsable]="false" [isRemovable]="false">
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <th>ALIAS</th>
+                <th>OWNER</th>
+                <th>FECHA</th>
+                <th>ACCION</th>
+            </tr>
+            <tr>
+                <td>{{ detalle.id }}</td>
+                <td>{{ detalle.alias }}</td>
+                <td>{{ detalle.owner }}</td>
+                <td>{{ detalle.fecha }}</td>
+                <td>
+                    <div>
+                        <div>
+                            <button type="button" class="btn btn-info btn-block" [routerLink]="['/layout/lista']">
+                                Volver 
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</mk-box>
