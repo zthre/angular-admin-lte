@@ -53,6 +53,7 @@ export class ListaService {
 
   public getItemById(id: string){
     let resultado: ListaItem;
+    console.log(this.listaItems);
     this.listaItems.forEach(item =>{
         if(item.id == id){
           resultado = item;
@@ -72,6 +73,20 @@ export class ListaService {
     item = this.getItemById(id);
     index = this.listaItems.indexOf(item);
     this.listaItems.splice(index,1);
+  }
+
+  public agregarItem(nuevoItem: ListaItem){
+    let item: ListaItem;
+    let resultado: boolean;
+    item = this.getItemById(nuevoItem.id);
+    if(item == null){
+      this.listaItems.push(nuevoItem);
+      resultado = true;
+    }else{
+      resultado = false;
+    }
+    console.log("nueva lista", this.listaItems);
+    return resultado;
   }
 
 }

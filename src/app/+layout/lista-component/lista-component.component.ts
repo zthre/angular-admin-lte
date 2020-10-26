@@ -15,9 +15,16 @@ export class ListaComponent  implements AfterViewInit, OnInit {
 
   lista: ListaItem[] = [];
 
+  nuevoItem: ListaItem = {
+    id:"",
+    alias:"",
+    owner: "",
+    fecha: "",
+  };
+
 
   constructor(private listaService: ListaService){
-
+    
   }
 
   /**
@@ -33,6 +40,15 @@ export class ListaComponent  implements AfterViewInit, OnInit {
     console.log('Init');
   }
 
+  public clearItem(){
+    this.nuevoItem = {
+      id:"",
+      alias:"",
+      owner: "",
+      fecha: "",
+    };
+  }
+
 
   public borrarItem(id:string){
     let index:number;
@@ -45,6 +61,13 @@ export class ListaComponent  implements AfterViewInit, OnInit {
     //Borrar item
     this.lista.splice(index,1);
     console.log("Nuevo arreglo: ", this.lista);
+  }
+
+  public guardarItem(){
+    console.log(this.nuevoItem);
+    //this.lista.push(this.nuevoItem);
+    this.listaService.agregarItem(this.nuevoItem);
+    
   }
 
 

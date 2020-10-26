@@ -6,6 +6,7 @@ import { ListaComponent } from './lista-component.component';
 
 import { BoxModule } from 'angular-admin-lte';
 import { DetalleComponent } from './detalle/detalle.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { DetalleComponent } from './detalle/detalle.component';
     imports: [
       CommonModule,
       ListaRoutingModule,
-      BoxModule
+      BoxModule,
+      FormsModule
     ],
     declarations: [ListaComponent]
   })

@@ -22,7 +22,7 @@
                         </div>
                         <div>
                             <button (click)="borrarItem( listaItem.id )" type="button" class="btn btn-danger btn-block">
-                                Eliminar
+                                Eliminarr
                             </button>
                         </div>
                     </div>
@@ -31,3 +31,70 @@
         </tbody>
     </table>
 </mk-box>
+<div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+    Nuevo Item
+  </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModal3Label">Nuevo Item de lista</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <form #nuevoItemForm="ngForm">
+                        <div class="form-group">
+                            <label for="id" class="col-form-label">Id:</label>
+                            <input type="number" class="form-control" id="id" [(ngModel)]="nuevoItem.id" name="id" required #id="ngModel">
+                            <div *ngIf="id.invalid && (id.dirty || id.touched)" class="alert alert-danger">
+                                <div *ngIf="id.errors.required">
+                                    Id es olbigatorio.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="alias" class="col-form-label">Alias:</label>
+                            <input type="text" class="form-control" id="alias" [(ngModel)]="nuevoItem.alias" name="alias" required #alias="ngModel">
+                            <div *ngIf="alias.invalid && (alias.dirty || alias.touched)" class="alert alert-danger">
+                                <div *ngIf="alias.errors.required">
+                                    Alias es olbigatorio.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="owner" class="col-form-label">Owner:</label>
+                            <input type="text" class="form-control" id="owner" [(ngModel)]="nuevoItem.owner" name="owner" required #owner="ngModel">
+                            <div *ngIf="owner.invalid && (owner.dirty || owner.touched)" class="alert alert-danger">
+                                <div *ngIf="owner.errors.required">
+                                    Owner es olbigatorio.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha" class="col-form-label">Fecha:</label>
+                            <input type="date" class="form-control" id="fecha" [(ngModel)]="nuevoItem.fecha" name="fecha" required #fecha="ngModel">
+                            <div *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)" class="alert alert-danger">
+                                <div *ngIf="fecha.errors.required">
+                                    Fecha es olbigatorio.
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" [disabled]="nuevoItemForm.invalid" (click)="guardarItem()">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

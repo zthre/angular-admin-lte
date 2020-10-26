@@ -5,6 +5,7 @@ import { adminLteConf } from './admin-lte.conf';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
+import { FormsModule } from '@angular/forms';
 
 import { LayoutModule } from 'angular-admin-lte';
 
@@ -22,7 +23,8 @@ import { ListaService } from './services/lista.service';
     AppRoutingModule,
     CoreModule,
     LayoutModule.forRoot(adminLteConf),
-    LoadingPageModule, MaterialBarModule
+    LoadingPageModule, MaterialBarModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
